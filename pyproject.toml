@@ -14,7 +14,7 @@ license-files = ["LICENSE"]
 authors = [{name = "Rakshit"}]
 
 [project.optional-dependencies]
-dev = ["pytest>=7", "ruff==0.8.4", "build"]
+dev = ["pytest>=7", "ruff==0.17.1", "build"]
 figures = ["matplotlib>=3.10.9"]
 
 [project.scripts]
