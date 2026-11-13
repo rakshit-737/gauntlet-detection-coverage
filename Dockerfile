@@ -1,11 +1,11 @@
 # syntax=docker/dockerfile:1
-FROM python:3.12-slim@sha256:dddfd7e07f9d15aeeca61529320492139d21cac7f0070c00609243e51e4e0016 AS build
+FROM python:3.15-slim@sha256:65a65fc7b30b06cb6df4930fd4650697cb23f4c2698ab81fc87e4b031bc36928 AS build
 WORKDIR /src
 COPY pyproject.toml README.md LICENSE ./
 COPY gauntlet ./gauntlet
 RUN pip wheel --no-cache-dir --wheel-dir /wheels .
 
-FROM python:3.12-slim@sha256:dddfd7e07f9d15aeeca61529320492139d21cac7f0070c00609243e51e4e0016
+FROM python:3.15-slim@sha256:65a65fc7b30b06cb6df4930fd4650697cb23f4c2698ab81fc87e4b031bc36928
 LABEL org.opencontainers.image.source="https://github.com/rakshit-737/gauntlet-detection-coverage" \
       org.opencontainers.image.description="Threat-informed purple-team coverage scoring (lab-only, never executes techniques; replays recorded telemetry)" \
       org.opencontainers.image.licenses="MIT"
